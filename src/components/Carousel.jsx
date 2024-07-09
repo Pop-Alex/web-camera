@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { hightlightsSlides } from "../constants";
-import { playImg } from "../utils";
+import { pauseImg, playImg, replayImg } from "../utils";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -203,7 +203,7 @@ const Carousel = () => {
         </div>
         <button className="control-btn">
           <img
-            /* src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg} */
+            src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg}
             alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}
             onClick={
               isLastVideo

@@ -40,38 +40,42 @@ function Model(props) {
       <group {...props} dispose={null} scale={0.6}>
         <meshStandardMaterial roughness={1} map={texture} />
 
-        <Select
-          enabled={hovered === "Obiectivul"}
-          onPointerOver={over("Obiectivul")}
-          onPointerOut={() => debouncedHover(null)}>
-          <group position={[0, 0, -0.009]} scale={0.929}>
+        <group position={[0, 0, -0.009]} scale={0.929}>
+          <Select
+            enabled={hovered === "Obiectivul"}
+            onPointerOver={over("Obiectivul")}
+            onPointerOut={() => debouncedHover(null)}>
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.cilindro_low1_Cilindro_material_0.geometry}
-              material={materials.Cilindro_material}>
-              {/* <meshStandardMaterial roughness={1} map={texture} /> */}
-            </mesh>
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.cilindro_low1_lambert3_0.geometry}
-              material={materials.lambert3}
-            />
+              material={materials.Cilindro_material}></mesh>
+          </Select>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.cilindro_low1_lambert3_0.geometry}
+            material={materials.lambert3}
+          />
+          <Select
+            enabled={hovered === "Lentila"}
+            onPointerOver={over("Lentila")}
+            onPointerOut={() => debouncedHover(null)}>
             <mesh
               castShadow
               receiveShadow
               geometry={nodes.cilindro_low1_lambert1_0.geometry}
               material={materials.lambert1}
             />
-            <mesh
-              castShadow
-              receiveShadow
-              geometry={nodes.cilindro_low1_lambert4_0.geometry}
-              material={materials.lambert4}
-            />
-          </group>
-        </Select>
+          </Select>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.cilindro_low1_lambert4_0.geometry}
+            material={materials.lambert4}
+          />
+        </group>
+
         <Select
           enabled={hovered === "LCD Display"}
           onPointerOver={over("LCD Display")}
@@ -84,14 +88,19 @@ function Model(props) {
             position={[0, 0, -0.69]}
             scale={[2.022, 1.969, 1.256]}></mesh>
         </Select>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.pCylinder9_ruleta__0.geometry}
-          material={materials.ruleta}
-          position={[-1.129, 1.083, -0.797]}
-          rotation={[-0.001, 0.019, 0.24]}
-          scale={[0.315, 0.054, 0.315]}></mesh>
+        <Select
+          enabled={hovered === "Display"}
+          onPointerOver={over(" Display")}
+          onPointerOut={() => debouncedHover(null)}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.pCylinder9_ruleta__0.geometry}
+            material={materials.ruleta}
+            position={[-1.129, 1.083, -0.797]}
+            rotation={[-0.001, 0.019, 0.24]}
+            scale={[0.315, 0.054, 0.315]}></mesh>
+        </Select>
         <mesh
           castShadow
           receiveShadow

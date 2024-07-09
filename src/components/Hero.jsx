@@ -75,13 +75,13 @@ const Hero = () => {
         />
       </div>
 
-      <div
+      {/* <div
         id="cta"
         className="flex flex-col items-center opacity-0 translate-y-20">
         <a className="btn">
           <Link to="/explore">Explore</Link>
         </a>
-      </div>
+      </div> */}
       <div
         id="media"
         className="absolute top-40
